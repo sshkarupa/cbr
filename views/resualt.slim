@@ -1,0 +1,18 @@
+p.color-success
+  | from 
+  =Date.parse(@date_begin).strftime("%d.%m.%Y") 
+  | &nbsp;to&nbsp;
+  =Date.parse(@date_end).strftime("%d.%m.%Y")
+table.table.table-condensed.table-striped.table-bordered
+  thead
+    tr
+      th Currency
+      th Average value
+  tbody
+    - @currency_average_value.each do |currency|  
+      tr
+        td = currency.keys[0].to_s
+        td = currency.values[0].to_f.round(4)
+
+
+      
