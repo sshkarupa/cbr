@@ -6,4 +6,3 @@ gem 'slim'
 gem 'sass'
 gem 'nokogiri'
 gem 'xpath'
-
