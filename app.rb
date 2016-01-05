@@ -24,9 +24,10 @@ helpers do
     records = doc.xpath("//Record")
     currency = 0.000
     records.each do |record|
-      nominal = record.at_xpath("//Nominal").text.to_i
-      value = record.at_xpath("//Value").text.gsub!(",",".").to_f
+      nominal = record.at_xpath("Nominal").text.to_i
+      value = record.at_xpath("Value").text.gsub!(",",".").to_f
       currency += value / nominal
+      currency.to_f
     end
     currency = currency / records.count
   end
@@ -43,7 +44,6 @@ get '/resualt/' do
   @currency_average_value = []
   @@currency_codes.each do |currency|
     value = get_average_currency_value(@date_begin, @date_end, currency[1])
-    puts value.to_f
     @currency_average_value << { currency[0] => value.to_f }
   end
    slim :resualt, layout: (request.xhr? ? false : :layout)
