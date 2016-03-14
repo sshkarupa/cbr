@@ -1,2 +1,1 @@
-# cbr
-Parser Central Bank of Russia
+# Web parser of currencies from the Central Bank of Russia
