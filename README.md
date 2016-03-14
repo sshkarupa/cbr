@@ -1,1 +1,2 @@
-# Web parser of currencies from the Central Bank of Russia
+# Сurrency parser 
+Web parser of currencies from the Central Bank of Russia
